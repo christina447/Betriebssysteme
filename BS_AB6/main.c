@@ -17,6 +17,8 @@ typedef struct {
     int full, empty;
 } queue;
 
+int threadCounter = 1;
+
 //Queue erzeugen
 queue *queueInit (void){
 
@@ -80,9 +82,6 @@ void fileReader(queue **fifo) {
     }
 
     while (fgets(line, MAXCHAR, fptr) != NULL) {
-       // if (*c = strchr(line, '\n') != NULL){
-       //     *c = '\0';
-     //   }
         addInQ(fifo, line);
     }
 }
@@ -94,6 +93,22 @@ void fileReader(queue **fifo) {
 
 //webreq_init(argc, argv);
 
+void alternativeWebrequest(queue *fifo){
+
+   char *url;
+   pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+
+    pthread_mutex_lock(&lock);
+   url = delFromQ(fifo);
+
+
+
+
+   printf ("%i. ClientThread: %s\n", threadCounter, url);
+
+   threadCounter++;
+    pthread_mutex_unlock(&lock);
+}
 
 
 
@@ -104,6 +119,8 @@ int main() {
     queue *fifo;
     char *output ;
     pthread_t readerThread;
+    int threadAnzahl = 10;
+
 
     //Erzeugen der Queue
     fifo = queueInit();
@@ -111,26 +128,23 @@ int main() {
         printf ("Fehler beim initialisieren der Queue");
     }
 
+
+
     //Einlesen des Files durch den Reader-Thread
     pthread_create(&readerThread, NULL, fileReader, fifo);   //Testen der Threads
-
-   // fileReader(fifo);
-
     pthread_join(readerThread, NULL);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
-    output = delFromQ(fifo);
-    printf("out: %s", output);
+
+    pthread_t clientThreadArr[threadAnzahl];
+    for (int i = 0; i < threadAnzahl; i++){
+       pthread_create(&clientThreadArr[i], NULL, alternativeWebrequest, fifo);
+    }
+
+    for (int i = 0; i < threadAnzahl; i++){
+        pthread_join(clientThreadArr[i], NULL);
+    }
+
+
+
 
 
 }
