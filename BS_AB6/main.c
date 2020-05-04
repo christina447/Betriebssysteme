@@ -121,24 +121,6 @@ void *webRequestAbruf(void *fifo){
     pthread_mutex_destroy(&lock);
 }
 
-void alternativeWebrequest(queue *fifo){
-
-   char *url;
-
-
-
-   url = delFromQ(fifo);
-
-
-
-
-   printf ("%i. ClientThread: %s\n", threadCounter, url);
-
-   threadCounter++;
-
-}
-
-
 
 
 //--------------------------------MAIN------------------------------------------------------------
@@ -158,14 +140,13 @@ int main() {
 
     initLib();
 
-
     //Einlesen des Files durch den Reader-Thread
     pthread_create(&readerThread, NULL, fileReader, fifo);   //Testen der Threads
     pthread_join(readerThread, NULL);
 
     pthread_t clientThreadArr[threadAnzahl];
     for (int i = 0; i < threadAnzahl; i++){
-       pthread_create(&clientThreadArr[i], NULL, alternativeWebrequest, fifo);
+       pthread_create(&clientThreadArr[i], NULL, webRequestAbruf, fifo);
     }
 
     for (int i = 0; i < threadAnzahl; i++){
