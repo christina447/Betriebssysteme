@@ -101,7 +101,7 @@ void *webRequestAbruf(void *fifo){
     pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
     pthread_mutex_lock(&lock);
 
-    while (fifoPtr->empty != 1){
+    while (!(fifoPtr->empty)) {
 
         char* quellURL = strdup(delFromQ(fifo));
         char* downloadURL = strdup(quellURL);
@@ -137,7 +137,7 @@ int main() {
     if (fifo == NULL){
         printf ("Fehler beim initialisieren der Queue");
     }
-    
+
     //Einlesen des Files durch den Reader-Thread
     pthread_create(&readerThread, NULL, fileReader, fifo);   //Testen der Threads
     pthread_join(readerThread, NULL);
