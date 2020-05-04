@@ -89,8 +89,8 @@ void fileReader(queue **fifo) {
 
 //------------------------------WEB-REQUEST------------------------------------------------------
 //lib initalisieren
-int argc = 2;
-char *argv[] = {'--webreq-delay 100', '--webreq-path download'};
+int argcounter = 2;
+char *argvalues[argcounter] = {'--webreq-delay 100', '--webreq-path download'};
 
 webreq_init(argc, argv);
 
