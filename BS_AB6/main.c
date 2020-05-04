@@ -88,10 +88,14 @@ void fileReader(queue **fifo) {
 
 //------------------------------WEB-REQUEST------------------------------------------------------
 //lib initalisieren
-//int argcounter = 2;
-//char *argvalues[argcounter] = {'--webreq-delay 100', '--webreq-path download'};
+void initLib() {
+    int argcounter = 2;
+    char *argvalues[argcounter];
+    argvalues[0] = "--webreq-delay 100";
+    argvalues[1] = "--webreq-path download";
 
-//webreq_init(argc, argv);
+    webreq_init(argcounter, argvalues);
+}
 
 void alternativeWebrequest(queue *fifo){
 
@@ -128,6 +132,7 @@ int main() {
         printf ("Fehler beim initialisieren der Queue");
     }
 
+    initLib();
 
 
     //Einlesen des Files durch den Reader-Thread
