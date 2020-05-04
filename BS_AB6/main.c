@@ -17,7 +17,7 @@ typedef struct {
     int full, empty;
 } queue;
 
-int threadCounter = 1;
+int fileCounter = 0;
 
 //Queue erzeugen
 queue *queueInit (void){
@@ -66,7 +66,7 @@ char* delFromQ(queue *q){
 }
 
 // -----------------------------FILE-READER-----------------------------------------
-void fileReader(queue **fifo) {
+void *fileReader(void *fifo) {
     char fileName[50];
     FILE *fptr = NULL;
     char line[MAXCHAR];
@@ -78,7 +78,7 @@ void fileReader(queue **fifo) {
     fptr = fopen(fileName, "r");
     if (fptr == NULL) {
         printf("Einlesen der Datei nicht möglich");
-        return;
+        return NULL;
     }
 
     while (fgets(line, MAXCHAR, fptr) != NULL) {
@@ -87,22 +87,46 @@ void fileReader(queue **fifo) {
 }
 
 //------------------------------WEB-REQUEST------------------------------------------------------
-//lib initalisieren
-void initLib() {
+void *webRequestAbruf(void *fifo){
+
+    queue *fifoPtr = (queue*) fifo;
+
     int argcounter = 2;
     char *argvalues[argcounter];
     argvalues[0] = "--webreq-delay 100";
     argvalues[1] = "--webreq-path download";
 
     webreq_init(argcounter, argvalues);
+
+    pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+    pthread_mutex_lock(&lock);
+
+    while (fifoPtr->empty != 1){
+
+        char* quellURL = strdup(delFromQ(fifo));
+        char* downloadURL = strdup(quellURL);
+
+        strtok(quellURL, "/");
+        char *website = strtok(NULL, "/");
+
+        char filename[50];
+        int threadID = (int) pthread_self();
+        fileCounter++;
+
+        snprintf(filename, sizeof(filename), ("%i_%i_%s.html", fileCounter, threadID, website));
+
+        webreq_download(quellURL, filename);
+    }
+    pthread_mutex_unlock(&lock);
+    pthread_mutex_destroy(&lock);
 }
 
 void alternativeWebrequest(queue *fifo){
 
    char *url;
-   pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 
-    pthread_mutex_lock(&lock);
+
+
    url = delFromQ(fifo);
 
 
@@ -111,7 +135,7 @@ void alternativeWebrequest(queue *fifo){
    printf ("%i. ClientThread: %s\n", threadCounter, url);
 
    threadCounter++;
-    pthread_mutex_unlock(&lock);
+
 }
 
 
