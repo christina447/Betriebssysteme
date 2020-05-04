@@ -1,4 +1,4 @@
-/home/christina/clion-2019.3.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -G "CodeBlocks - Unix Makefiles" /home/christina/CLionProjects/BS_AB6
+/home/christina/clion-2019.3.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -G "CodeBlocks - Unix Makefiles" /home/christina/CLionProjects/Betriebssysteme/BS_AB6
 -- The C compiler identification is GNU 7.5.0
 -- Check for working C compiler: /usr/bin/gcc
 -- Check for working C compiler: /usr/bin/gcc -- works
@@ -8,4 +8,4 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/christina/CLionProjects/BS_AB6/cmake-build-debug
+-- Build files have been written to: /home/christina/CLionProjects/Betriebssysteme/BS_AB6/cmake-build-debug

@@ -11,7 +11,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="610af310-05f3-41d8-ad1f-acc478645d05" name="Default Changelist" comment="" />
+    <list default="true" id="610af310-05f3-41d8-ad1f-acc478645d05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BS_AB6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BS_AB6.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BS_AB6.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BS_AB6.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +44,9 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bH82stvM8CuuXKbspznh6yPr2b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,8 +55,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="BS_AB6" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BS_AB6" TARGET_NAME="BS_AB6" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BS_AB6" RUN_TARGET_NAME="BS_AB6">
@@ -50,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588277454421</updated>
       <workItem from="1588277460643" duration="23452000" />
+      <workItem from="1588553390387" duration="5518000" />
     </task>
     <servers />
   </component>
@@ -57,59 +91,59 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1537" height="222" key="GridCell.Tab.0.bottom" timestamp="1588541544400">
+    <state width="1537" height="222" key="GridCell.Tab.0.bottom" timestamp="1588615265741">
       <screen x="67" y="27" width="1613" height="1023" />
     </state>
-    <state width="1537" height="222" key="GridCell.Tab.0.bottom/67.27.1613.1023@67.27.1613.1023" timestamp="1588541544400" />
-    <state width="1537" height="222" key="GridCell.Tab.0.center" timestamp="1588541544400">
+    <state width="1537" height="222" key="GridCell.Tab.0.bottom/67.27.1613.1023@67.27.1613.1023" timestamp="1588615265741" />
+    <state width="1537" height="222" key="GridCell.Tab.0.center" timestamp="1588615265740">
       <screen x="67" y="27" width="1613" height="1023" />
     </state>
-    <state width="1537" height="222" key="GridCell.Tab.0.center/67.27.1613.1023@67.27.1613.1023" timestamp="1588541544400" />
-    <state width="1537" height="222" key="GridCell.Tab.0.left" timestamp="1588541544382">
+    <state width="1537" height="222" key="GridCell.Tab.0.center/67.27.1613.1023@67.27.1613.1023" timestamp="1588615265740" />
+    <state width="1537" height="222" key="GridCell.Tab.0.left" timestamp="1588615265740">
       <screen x="67" y="27" width="1613" height="1023" />
     </state>
-    <state width="1537" height="222" key="GridCell.Tab.0.left/67.27.1613.1023@67.27.1613.1023" timestamp="1588541544382" />
-    <state width="1537" height="222" key="GridCell.Tab.0.right" timestamp="1588541544400">
+    <state width="1537" height="222" key="GridCell.Tab.0.left/67.27.1613.1023@67.27.1613.1023" timestamp="1588615265740" />
+    <state width="1537" height="222" key="GridCell.Tab.0.right" timestamp="1588615265740">
       <screen x="67" y="27" width="1613" height="1023" />
     </state>
-    <state width="1537" height="222" key="GridCell.Tab.0.right/67.27.1613.1023@67.27.1613.1023" timestamp="1588541544400" />
+    <state width="1537" height="222" key="GridCell.Tab.0.right/67.27.1613.1023@67.27.1613.1023" timestamp="1588615265740" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>100</line>
+          <line>114</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>91</line>
+          <line>105</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>63</line>
+          <line>66</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>70</line>
+          <line>73</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>72</line>
+          <line>75</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>73</line>
+          <line>76</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>82</line>
+          <line>85</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>

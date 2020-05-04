@@ -3,6 +3,9 @@
 #include <pthread.h>
 #include <string.h>
 
+#include "include/web_request.c"
+
+
 #define QUEUESIZE 20
 #define MAXCHAR 50
 
@@ -83,6 +86,17 @@ void fileReader(queue **fifo) {
         addInQ(fifo, line);
     }
 }
+
+//------------------------------WEB-REQUEST------------------------------------------------------
+//lib initalisieren
+int argc = 2;
+char *argv[] = {'--webreq-delay 100', '--webreq-path download'};
+
+webreq_init(argc, argv);
+
+
+
+
 
 //--------------------------------MAIN------------------------------------------------------------
 int main() {
