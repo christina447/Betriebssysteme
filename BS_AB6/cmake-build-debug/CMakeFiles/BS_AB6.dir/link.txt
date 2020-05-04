@@ -1,0 +1,1 @@
+/usr/bin/gcc -pthread -g   CMakeFiles/BS_AB6.dir/main.c.o  -o BS_AB6 
