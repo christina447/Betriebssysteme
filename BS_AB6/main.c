@@ -137,9 +137,7 @@ int main() {
     if (fifo == NULL){
         printf ("Fehler beim initialisieren der Queue");
     }
-
-    initLib();
-
+    
     //Einlesen des Files durch den Reader-Thread
     pthread_create(&readerThread, NULL, fileReader, fifo);   //Testen der Threads
     pthread_join(readerThread, NULL);
