@@ -72,7 +72,7 @@ void *fileReader(void *fifo) {
     char fileName[50];
     FILE *fptr = NULL;
     char line[MAXCHAR];
-    char *c;
+    char *pos;
 
     printf("Name des einzulesenden Files angeben:\n");
     scanf("%s", fileName);
@@ -84,6 +84,9 @@ void *fileReader(void *fifo) {
     }
 
     while (fgets(line, MAXCHAR, fptr) != NULL) {
+        if ((pos = strchr(line, '\n')) != NULL){
+            *pos = '\0';
+        }
         addInQ(fifoPtr, line);
     }
 }
