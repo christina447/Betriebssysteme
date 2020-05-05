@@ -46,6 +46,7 @@ void addInQ(queue *q, char *in){
     if (q->tail == q->head){
         q->full = 1;
     }
+    q->empty = 0;
     return;
 }
 
