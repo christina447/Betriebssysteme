@@ -6,7 +6,7 @@
 #include "include/web_request.c"
 
 
-#define QUEUESIZE 20
+#define QUEUESIZE 50
 #define MAXCHAR 50
 
 //-------------------------------QUEUE-------------------------------------------------------
@@ -91,7 +91,6 @@ void *fileReader(void *fifo) {
 //------------------------------WEB-REQUEST------------------------------------------------------
 void *webRequestAbruf(void *fifo){
 
-    printf("funktion test\n");
     queue *fifoPtr = (queue*) fifo;
 
     int argcounter = 2;
@@ -103,12 +102,8 @@ void *webRequestAbruf(void *fifo){
 
     pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
     pthread_mutex_lock(&lock);
-    printf("%i\n", fifoPtr->empty);
 
     while (!(fifoPtr->empty)) {
-
-        printf("anfang schleife test\n");
-
 
         char* quellURL = strdup(delFromQ(fifo));
         char* downloadURL = strdup(quellURL);
@@ -120,10 +115,9 @@ void *webRequestAbruf(void *fifo){
         int threadID = (int) pthread_self();
         fileCounter++;
 
-        snprintf(filename, sizeof(filename), ("%i_%i_%s.html", fileCounter, threadID, website));
+        snprintf(filename, sizeof(filename), "%i_%i_%s.html", fileCounter, threadID, website);
 
         webreq_download(quellURL, filename);
-        printf("while test\n");
     }
     pthread_mutex_unlock(&lock);
     pthread_mutex_destroy(&lock);
