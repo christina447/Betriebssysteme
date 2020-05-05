@@ -100,7 +100,7 @@ void *webRequestAbruf(void *fifo){
 
     int argcounter = 2;
     char *argvalues[argcounter];
-    argvalues[0] = "--webreq-delay 300";
+    argvalues[0] = "--webreq-delay 500";
     argvalues[1] = "--webreq-path download";
 
     webreq_init(argcounter, argvalues);
