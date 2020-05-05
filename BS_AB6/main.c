@@ -67,6 +67,7 @@ char* delFromQ(queue *q){
 }
 
 // -----------------------------FILE-READER-----------------------------------------
+//Zeilenweises Einlesen der Links aus .txt Datei in die Queue
 void *fileReader(void *fifo) {
     queue *fifoPtr = (queue *) fifo;
     char fileName[50];
@@ -92,6 +93,7 @@ void *fileReader(void *fifo) {
 }
 
 //------------------------------WEB-REQUEST------------------------------------------------------
+//Download der Websites durch WebRequest
 void *webRequestAbruf(void *fifo){
 
     queue *fifoPtr = (queue*) fifo;
@@ -118,7 +120,7 @@ void *webRequestAbruf(void *fifo){
         int threadID = (int) pthread_self();
         fileCounter++;
 
-        printf("Thread ID: %i download %s", threadID, downloadURL);
+        printf("Thread ID: %i download %s\n", threadID, downloadURL);
         snprintf(filename, sizeof(filename), "%i_%i_%s.html", fileCounter, threadID, website);
 
         webreq_download(downloadURL, filename);
@@ -148,6 +150,10 @@ int main() {
     pthread_create(&readerThread, NULL, fileReader, fifo);   //Testen der Threads
     pthread_join(readerThread, NULL);
 
+    //Bestimmung der ClientThread Anzahl
+    printf("Anzahl der ClientThreads:\n");
+    scanf("%s", threadAnzahl);
+
     //Zeitpunkt vor dem Download
     struct timeval timeBegin, timeEnd;
     gettimeofday(&timeBegin, NULL);
@@ -163,7 +169,7 @@ int main() {
 
     //Zeitpunkt nach dem Download
     gettimeofday(&timeEnd, NULL);
-    
+
     //Dauer des Downloads in ms
     printf("%lu ms\n", (timeEnd.tv_sec - timeBegin.tv_sec)*1000 + (timeEnd.tv_usec-timeBegin.tv_usec)/1000);
 
