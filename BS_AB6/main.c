@@ -89,6 +89,7 @@ void *fileReader(void *fifo) {
 //------------------------------WEB-REQUEST------------------------------------------------------
 void *webRequestAbruf(void *fifo){
 
+    printf("funktion test");
     queue *fifoPtr = (queue*) fifo;
 
     int argcounter = 2;
@@ -100,8 +101,12 @@ void *webRequestAbruf(void *fifo){
 
     pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
     pthread_mutex_lock(&lock);
+    printf("%i", fifoPtr->empty);
 
     while (!(fifoPtr->empty)) {
+
+        printf("anfang schleife test");
+
 
         char* quellURL = strdup(delFromQ(fifo));
         char* downloadURL = strdup(quellURL);
