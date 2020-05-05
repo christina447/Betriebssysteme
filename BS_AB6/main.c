@@ -152,7 +152,7 @@ int main() {
 
     //Bestimmung der ClientThread Anzahl
     printf("Anzahl der ClientThreads:\n");
-    scanf("%s", threadAnzahl);
+    scanf("%i", threadAnzahl);
 
     //Zeitpunkt vor dem Download
     struct timeval timeBegin, timeEnd;
