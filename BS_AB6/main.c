@@ -100,7 +100,7 @@ void *webRequestAbruf(void *fifo){
 
     int argcounter = 2;
     char *argvalues[argcounter];
-    argvalues[0] = "--webreq-delay 100";
+    argvalues[0] = "--webreq-delay 0";
     argvalues[1] = "--webreq-path download";
 
     webreq_init(argcounter, argvalues);
@@ -120,7 +120,7 @@ void *webRequestAbruf(void *fifo){
         int threadID = (int) pthread_self();
         fileCounter++;
 
-        printf("Thread ID: %i download %s\n", threadID, downloadURL);
+        printf("Thread ID: %i downloads %s\n", threadID, downloadURL);
         snprintf(filename, sizeof(filename), "%i_%i_%s.html", fileCounter, threadID, website);
 
         webreq_download(downloadURL, filename);
