@@ -118,6 +118,7 @@ void *webRequestAbruf(void *fifo){
         int threadID = (int) pthread_self();
         fileCounter++;
 
+        printf("Thread ID: %i download %s", threadID, downloadURL);
         snprintf(filename, sizeof(filename), "%i_%i_%s.html", fileCounter, threadID, website);
 
         webreq_download(downloadURL, filename);
@@ -147,18 +148,26 @@ int main() {
     pthread_create(&readerThread, NULL, fileReader, fifo);   //Testen der Threads
     pthread_join(readerThread, NULL);
 
+    //Zeitpunkt vor dem Download
+    struct timeval timeBegin, timeEnd;
+    gettimeofday(&timeBegin, NULL);
+
+    //Download durch webRequest
     pthread_t clientThreadArr[threadAnzahl];
     for (int i = 0; i < threadAnzahl; i++){
        pthread_create(&clientThreadArr[i], NULL, webRequestAbruf, fifo);
     }
-
     for (int i = 0; i < threadAnzahl; i++){
         pthread_join(clientThreadArr[i], NULL);
     }
 
+    //Zeitpunkt nach dem Download
+    gettimeofday(&timeEnd, NULL);
+    
+    //Dauer des Downloads in ms
+    printf("%lu ms\n", (timeEnd.tv_sec - timeBegin.tv_sec)*1000 + (timeEnd.tv_usec-timeBegin.tv_usec)/1000);
 
-
-
+    return 0;
 
 }
 
