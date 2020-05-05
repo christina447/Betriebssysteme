@@ -67,6 +67,7 @@ char* delFromQ(queue *q){
 
 // -----------------------------FILE-READER-----------------------------------------
 void *fileReader(void *fifo) {
+    queue *fifoPtr = (queue *) fifo;
     char fileName[50];
     FILE *fptr = NULL;
     char line[MAXCHAR];
