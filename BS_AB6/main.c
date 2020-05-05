@@ -116,6 +116,7 @@ void *webRequestAbruf(void *fifo){
         snprintf(filename, sizeof(filename), ("%i_%i_%s.html", fileCounter, threadID, website));
 
         webreq_download(quellURL, filename);
+        printf("while test");
     }
     pthread_mutex_unlock(&lock);
     pthread_mutex_destroy(&lock);
