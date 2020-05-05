@@ -83,14 +83,14 @@ void *fileReader(void *fifo) {
     }
 
     while (fgets(line, MAXCHAR, fptr) != NULL) {
-        addInQ(fifo, line);
+        addInQ(fifoPtr, line);
     }
 }
 
 //------------------------------WEB-REQUEST------------------------------------------------------
 void *webRequestAbruf(void *fifo){
 
-    printf("funktion test");
+    printf("funktion test\n");
     queue *fifoPtr = (queue*) fifo;
 
     int argcounter = 2;
@@ -102,11 +102,11 @@ void *webRequestAbruf(void *fifo){
 
     pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
     pthread_mutex_lock(&lock);
-    printf("%i", fifoPtr->empty);
+    printf("%i\n", fifoPtr->empty);
 
     while (!(fifoPtr->empty)) {
 
-        printf("anfang schleife test");
+        printf("anfang schleife test\n");
 
 
         char* quellURL = strdup(delFromQ(fifo));
@@ -122,7 +122,7 @@ void *webRequestAbruf(void *fifo){
         snprintf(filename, sizeof(filename), ("%i_%i_%s.html", fileCounter, threadID, website));
 
         webreq_download(quellURL, filename);
-        printf("while test");
+        printf("while test\n");
     }
     pthread_mutex_unlock(&lock);
     pthread_mutex_destroy(&lock);
